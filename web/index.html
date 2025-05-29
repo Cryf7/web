@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio - Faisal Akmal Baihaqi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Aktifkan dark mode berbasis class, supaya bisa toggle manual
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #f7fafc, #e6fffa);
+    }
+    .dark body {
+      background: linear-gradient(to bottom right, #1f2937, #111827);
+    }
+  </style>
+</head>
+<body class="text-gray-800 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- Tombol Toggle -->
+  <div class="fixed top-4 right-4 z-50">
+    <button id="mode-toggle" class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-full shadow-md hover:shadow-lg transition">
+      🌙 Dark Mode
+    </button>
+  </div>
+
+  <!-- Header -->
+  <section class="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center md:items-start gap-10">
+    <img src="profil.jpg" alt="Foto Profil"
+         class="w-48 h-48 object-cover rounded-xl shadow-md border border-gray-300 dark:border-gray-600" />
+    <div class="w-full">
+      <h1 class="text-4xl font-medium mb-1 tracking-wide">Faisal Akmal Baihaqi</h1>
+      <p class="text-lg text-gray-500 dark:text-gray-400 mb-6">Teknik Komputer | Universitas Teknologi Yogyakarta</p>
+      <div class="mb-10">
+        <h2 class="text-2xl font-semibold border-b-2 border-green-400 inline-block mb-3">Tentang Saya</h2>
+        <p class="leading-relaxed">
+          Saya adalah Mahasiswa Teknik Komputer di Universitas Teknologi Yogyakarta, saya memiliki minat yang kuat dalam bidang teknologi dan jaringan komputer. Saya selalu berupaya mempelajari perkembangan terbaru di dunia teknologi serta menerapkan solusi yang efektif dan efisien. Dengan rasa ingin tahu yang tinggi, saya terus mengembangkan kemampuan agar dapat memberikan kontribusi positif dalam bidang IT dan teknologi.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-2xl font-semibold border-b-2 border-green-400 inline-block mb-3">Keahlian</h2>
+        <ul class="list-disc list-inside space-y-1 leading-relaxed">
+          <li>HTML, CSS, C++</li>
+          <li>VirtualBox</li>
+          <li>Laravel, PHP, MySQL</li>
+          <li>Winbox, Routing</li>
+          <li>Desain Responsif & UI/UX</li>
+          <li>Arduino IDE, Proteus</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyek -->
+  <section class="max-w-6xl mx-auto px-6 py-12 border-t border-gray-300 dark:border-gray-700">
+    <h2 class="text-2xl font-semibold border-b-2 border-green-400 inline-block mb-6">Proyek</h2>
+    <div class="grid gap-8 md:grid-cols-2">
+      <div class="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <img src="gtm.jpg" alt="Proyek 1" class="w-full aspect-square object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Proyek 1 - GTM</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
+            GTM adalah Gas and Temperature Monitoring untuk memonitor tingkat kebocoran gas dan memonitor besarnya temperatur di sebuah ruangan.
+          </p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <img src="robot.jpg" alt="Proyek 2" class="w-full aspect-square object-cover" />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Proyek 2 - Robot Wall Follower</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
+            Robot pendeteksi dinding, jika sensor mendeteksi dinding atau benda maka robot akan berbelok.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section class="max-w-6xl mx-auto px-6 py-12 border-t border-gray-300 dark:border-gray-700">
+    <h2 class="text-2xl font-semibold border-b-2 border-green-400 inline-block mb-4">Contact Me</h2>
+    <ul class="space-y-2 leading-relaxed">
+      <li>Email: <a href="mailto:akmalbaihaqi134@gmail.com" class="text-green-600 hover:underline">akmalbaihaqi134@gmail.com</a></li>
+      <li>Instagram: <a href="https://instagram.com/faisal_akmal15_" class="text-green-600 hover:underline">@faisal_akmal15_</a></li>
+      <li>Phone: <span class="text-green-600">+62 858 7769 1951</span></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-900 text-center text-sm text-gray-500 dark:text-gray-400 py-6 mt-12 border-t border-gray-300 dark:border-gray-700">
+    &copy; 2025 Faisal Akmal Baihaqi. Semua hak cipta dilindungi.
+  </footer>
+
+  <!-- Script Toggle Mode -->
+  <script>
+    const toggle = document.getElementById('mode-toggle');
+    const html = document.documentElement;
+
+    // Cek localStorage
+    if (localStorage.theme === 'dark' || 
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+      toggle.textContent = '☀️ Light Mode';
+    }
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      localStorage.theme = isDark ? 'dark' : 'light';
+    });
+  </script>
+
+</body>
+</html>
